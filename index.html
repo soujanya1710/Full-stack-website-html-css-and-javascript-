@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Full Stack</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main class="container">
+    <section class="card">
+        <h1>🐍 Snake Game</h1>
+        <p class="subtitle">Full-stack Python project</p>
+
+        <div class="topbar">
+            <label>
+                Player
+                <input id="playerName" maxlength="20" value="Player">
+            </label>
+            <div class="stat">Score <strong id="score">0</strong></div>
+            <div class="stat">Level <strong id="level">1</strong></div>
+        </div>
+
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div id="message" class="message">
+            Press Start Game to begin
+        </div>
+
+        <div class="buttons">
+            <button id="startBtn">Start Game</button>
+            <button id="restartBtn" class="secondary">Restart</button>
+        </div>
+
+        <div class="controls">
+            <button data-dir="up">⬆️</button>
+            <div>
+                <button data-dir="left">⬅️</button>
+                <button data-dir="down">⬇️</button>
+                <button data-dir="right">➡️</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="card leaderboard">
+        <h2>🏆 High Scores</h2>
+        <ol id="scoresList">
+            <li>Loading...</li>
+        </ol>
+    </section>
+</main>
+
+<script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
